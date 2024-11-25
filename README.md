@@ -4,7 +4,7 @@
 This is a simple yet powerful **Note App** built for Android using **Java**. The app allows users to create, read, update, and delete (CRUD) their notes. It features a dynamic and user-friendly interface that adapts to the user's actions, providing a smooth experience for managing notes on Android devices.
 
 ***Screenshots***
-
+![Screenshot_2024-11-25-16-44-09-28_0490714aab7a4c9e7a64f5bbd79e5f02](https://github.com/user-attachments/assets/5b75025e-79c5-41f5-adde-a3b2d751ef90)
 
 
 **Feature**:
