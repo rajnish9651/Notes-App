@@ -4,8 +4,17 @@
 This is a simple yet powerful **Note App** built for Android using **Java**. The app allows users to create, read, update, and delete (CRUD) their notes. It features a dynamic and user-friendly interface that adapts to the user's actions, providing a smooth experience for managing notes on Android devices.
 
 ***Screenshots***
-![Screenshot_2024-11-25-16-44-09-28_0490714aab7a4c9e7a64f5bbd79e5f02](https://github.com/user-attachments/assets/5b75025e-79c5-41f5-adde-a3b2d751ef90)
+![Screenshot_2024-11-25-16-44-09-28_0490714aab7a4c9e7a64f5bbd79e5f02](https://github.com/user-attachments/assets/5b75025e-79c5-41f5-adde-a3b2d751ef90){:style="width: 300px; height: 200px}
+![Screenshot_2024-11-25-16-53-12-31_0490714aab7a4c9e7a64f5bbd79e5f02](https://github.com/user-attachments/assets/21fef3aa-4dee-4c52-83f0-4c59f6ed915f)
+![Screenshot_2024-11-25-16-53-22-03_0490714aab7a4c9e7a64f5bbd79e5f02](https://github.com/user-attachments/assets/e08b302f-48c0-4844-b58c-b2f357db180e)
+![Screenshot_2024-11-25-16-53-36-25_0490714aab7a4c9e7a64f5bbd79e5f02](https://github.com/user-attachments/assets/ed8a266f-d9bb-414f-a5ce-e8d00c8cf286)
+![Screenshot_2024-11-25-16-54-16-47_0490714aab7a4c9e7a64f5bbd79e5f02](https://github.com/user-attachments/assets/0a1038b7-abc8-4cb2-b416-973ab1390b09)
+![Screenshot_2024-11-25-16-54-30-35_0490714aab7a4c9e7a64f5bbd79e5f02](https://github.com/user-attachments/assets/57c94fa6-ae00-4272-ab43-3c77e9ba8b10)
 
+![Screenshot_2024-11-25-16-54-37-72_0490714aab7a4c9e7a64f5bbd79e5f02](https://github.com/user-attachments/assets/8f46135f-7c7b-44c1-8bb2-7fdd3ed55e4d)
+![Screenshot_2024-11-25-16-58-12-24_0490714aab7a4c9e7a64f5bbd79e5f02](https://github.com/user-attachments/assets/14324304-b888-4552-8bb9-9dc37f63091b)
+![Screenshot_2024-11-25-16-58-19-67_0490714aab7a4c9e7a64f5bbd79e5f02](https://github.com/user-attachments/assets/5ccc2c44-45e6-4355-892a-708ca1d2682b)
+![Screenshot_2024-11-25-16-58-27-42_0490714aab7a4c9e7a64f5bbd79e5f02](https://github.com/user-attachments/assets/957bdefd-4a19-476c-babe-72de7d8f69b7)
 
 **Feature**:
 The Notes Android App offers the following features:
