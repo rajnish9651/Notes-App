@@ -160,44 +160,6 @@ public class MainActivity extends AppCompatActivity implements ItemClick {
 
         dataBaseHelper.deleteNote(id);
 
-//        // Show a confirmation dialog for deletion
-//        AlertDialog.Builder alertDialog2 = new AlertDialog.Builder(this);
-//        alertDialog2.setTitle("Delete?");
-//        alertDialog2.setIcon(R.drawable.delete_forever_icon);
-//        alertDialog2.setMessage("Do you want to delete this item?");
-//        alertDialog2.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                Toast.makeText(MainActivity.this, "Item Not Deleted", Toast.LENGTH_LONG).show();
-//            }
-//        });
-//
-//        alertDialog2.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                // Remove the note from the database
-//                dataBaseHelper.deleteNote(id);
-//
-//                // Find the note in the list and remove it
-//                for (NoteData note : noteDataList) {
-//                    if (note.getId() == id) {
-//                        noteDataList.remove(note);
-//                        break;
-//                    }
-//                }
-//
-//
-//                // Notify the adapter that the list has changed
-//                adapter.notifyDataSetChanged();
-//
-//                // Show a confirmation toast
-//                Toast.makeText(MainActivity.this, "Item is Deleted Successfully", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-////        alertDialog2.show();
-
-
     }
 
 

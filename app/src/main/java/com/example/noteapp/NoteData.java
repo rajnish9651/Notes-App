@@ -8,7 +8,7 @@ public class NoteData {
     String date;
 
 
-
+//constructor to initialize the filed
     public NoteData(int id, String title, String content) {
         this.content = content;
         this.title = title;
@@ -17,6 +17,9 @@ public class NoteData {
 
     public NoteData() {
     }
+
+
+    //setter and getter method for all field
 
     public String getContent() {
         return content;
