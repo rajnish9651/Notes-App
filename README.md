@@ -67,7 +67,7 @@ To build and run this project, you need:
 #### 3. **MainActivity.java**
 
 -   The main screen that lists all the notes.
--   Implements a `RecyclerView` to display the notes dynamically.
+-   Implements a RecyclerView to display the notes dynamically.
 -   Provides buttons to add new note.
 - Having  method such as filter() for filter(search) note, implemented delete() and etc.
 
