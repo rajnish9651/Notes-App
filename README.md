@@ -56,7 +56,7 @@ To build and run this project, you need:
 #### 1. **NoteDate.java**
 
 -   A Java class that represents a note with attributes title ,content and date.
--   Includes contractor and  getter and setter methods for these fields.
+-   Includes constructor and  getter and setter methods for these fields.
 
 #### 2. **DatabaseHelper.java**
 
@@ -78,11 +78,12 @@ To build and run this project, you need:
 
 #### 5. **NoteAdapter.java**
 
--   Managing and displaying data within UI components like , RecyclerView, ListView etc. They handle the data-binding process, efficiently recycling views, and managing different types of data sources.
-- 6. **ItemClick interface**
+- It will Managing and displaying data within UI components like , RecyclerView, ListView etc. They handle the data-binding process, efficiently recycling views, and managing different types of data sources.
+  
+#### 6. **ItemClick interface**
 - this interface is used to handle the delete operation which is implemeted by the MainActivity.java.
 
-**SplaceScreen.java**
+#### 7. **SplaceScreen.java**
 It is a constant screen that appears for a specific amount of time and generally shows for the first time when the app is launched. this screen is used to display some basic introductory information such as the note logo, content, etc just before the app loads completely.
 
 
