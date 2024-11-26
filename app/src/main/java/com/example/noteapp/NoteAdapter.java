@@ -107,8 +107,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
             if (itemId == R.id.menu_delete) {// for  delete action
                 itemClick.delete(noteData.getId());
                 noteDataList.remove(position);  // Remove the item from the list
-                notifyItemRemoved(position);   // Notify adapter about removal
-
+//                notifyItemRemoved(position);   // Notify adapter about removal
+                notifyDataSetChanged();
                 return true;
             } else if (itemId == R.id.menu_share) {// for share action
                 shareNote(noteData);

@@ -31,10 +31,10 @@
                 android:layout_height="wrap_content"
                 android:text="Notes App"
                 android:textColor="@color/textColor"
-                android:textSize="23sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 android:id="@+id/noteText"
-                android:backgroundTint="@color/textColor"
+
                />
 
             <ImageView
@@ -47,14 +47,12 @@
                 android:layout_marginRight="10dp" />
 
             <ImageView
-                android:id="@+id/changeOrder"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/grid_view_icon"
-               android:layout_alignParentEnd="true"
-                android:backgroundTint="@color/textColor"
-               />
-
+                android:id="@+id/changeOrder"
+                android:src="@drawable/grid_view_icon"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="@color/textColor"/>
 
 
         </RelativeLayout>

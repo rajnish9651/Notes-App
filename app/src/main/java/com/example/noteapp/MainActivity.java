@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements ItemClick {
     ArrayList<NoteData> noteDataList;
     NoteAdapter adapter;
     ImageView changeOrder, darkNightMode;
-    Boolean isLinear = false;
+    Boolean isLinear = true;
     EditText searchView;
     boolean isDarkMode = false;
 
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements ItemClick {
 
 
         //dark and night mode
+
         darkNightMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,17 +71,23 @@ public class MainActivity extends AppCompatActivity implements ItemClick {
         getData();
 
         //for changing the order of layout from linear to StaggeredGridLayoutManager and vice virsa
+        changeOrder.setImageResource(R.drawable.grid_view_icon);
+
         changeOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (isLinear) {
                     isLinear = false;
-                    changeOrder.setImageResource(R.drawable.grid_view_icon);
-                    recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL));
+                    changeOrder.setImageResource(R.drawable.linear_view_icon);
+                    changeOrder.setColorFilter(ContextCompat.getColor(MainActivity.this, R.color.textColor));
+                    recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+
                 } else {
                     isLinear = true;
-                    changeOrder.setImageResource(R.drawable.linear_view_icon);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+                    changeOrder.setImageResource(R.drawable.grid_view_icon);
+                    changeOrder.setColorFilter(ContextCompat.getColor(MainActivity.this, R.color.textColor));
+
+                    recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL));
                 }
             }
         });
