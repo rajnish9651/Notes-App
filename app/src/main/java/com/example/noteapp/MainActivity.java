@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements ItemClick {
@@ -45,10 +46,11 @@ public class MainActivity extends AppCompatActivity implements ItemClick {
         darkNightMode = findViewById(R.id.switchBtn);
         dataBaseHelper = new DataBaseHelper(this);
         noteDataList = new ArrayList<>();
+        adapter = new NoteAdapter(noteDataList, MainActivity.this, this);
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL));
 
 
         //dark and night mode
-
         darkNightMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,8 +69,8 @@ public class MainActivity extends AppCompatActivity implements ItemClick {
             }
         });
 
-        //fetching data  initialy and set on view
-        getData();
+        //setting recycler view adapter
+        recyclerView.setAdapter(adapter);
 
         //for changing the order of layout from linear to StaggeredGridLayoutManager and vice virsa
         changeOrder.setImageResource(R.drawable.grid_view_icon);
@@ -98,7 +100,6 @@ public class MainActivity extends AppCompatActivity implements ItemClick {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AddUpdateActivity.class);
                 startActivity(intent);
-
             }
         });
 
@@ -116,33 +117,26 @@ public class MainActivity extends AppCompatActivity implements ItemClick {
 
             @Override
             public void afterTextChanged(Editable s) {
-                filter(s.toString());//calling filter methhod to filter data from list
+                filter(s.toString());//calling filter methhod to filter note from list
             }
         });
 
     }
 
-
     @Override
     protected void onResume() {
         super.onResume();
-        getData();// fetching data onResume method so that view is updated with new item
-
+        getData();// fetching data onResume method so that view is updated with new note
     }
-
 
     //this method fetch all note from database
     protected void getData() {
-
-
-//        fetching data from data base by calling method of DBhelper class and showing to mainActivity initially
+        noteDataList.clear();
+//        fetching data from data base by calling method of DataBaseHelper class and showing to mainActivity initially
         noteDataList = dataBaseHelper.fetchData();
-
-        //setting recycler view adapter
-        adapter = new NoteAdapter(noteDataList, MainActivity.this, this);
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL));
-
-        recyclerView.setAdapter(adapter);
+        Collections.reverse(noteDataList);
+        adapter.updateNoteList(noteDataList);
+        adapter.notifyDataSetChanged();
 
     }
 
@@ -161,8 +155,7 @@ public class MainActivity extends AppCompatActivity implements ItemClick {
         adapter.filterList(filteredList); //calling method of adapter class
     }
 
-
-    // delete method of itemClick iterface for deleting note
+    // delete method of itemClick interface for deleting note
     @Override
     public void delete(int id) {
 

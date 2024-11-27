@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupMenu;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,6 +23,11 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         this.context = mainActivity;//mainActivity context
         this.itemClick = itemClick;// itemclick context
     }
+
+    public NoteAdapter() {
+    }
+
+    ;
 
     @NonNull
     @Override
@@ -60,7 +64,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
             @Override
             public boolean onLongClick(View v) {
 //                showing pop-pu menu
-                showPopupMenu(v, noteData, position);
+                showPopupMenu(v, noteData, holder.getAdapterPosition());
                 return true;
             }
         });
@@ -75,7 +79,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
 
     public class NoteViewHolder extends RecyclerView.ViewHolder {
         TextView contentText, titleText, textViewDate;
-
 
         public NoteViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -100,14 +103,12 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         PopupMenu popupMenu = new PopupMenu(context, view);
         MenuInflater inflater = popupMenu.getMenuInflater();
         inflater.inflate(R.menu.note_item_menu, popupMenu.getMenu());  // Inflate or show custom menu
-
         // Handle menu item clicks
         popupMenu.setOnMenuItemClickListener(item -> {
             int itemId = item.getItemId();
             if (itemId == R.id.menu_delete) {// for  delete action
                 itemClick.delete(noteData.getId());
                 noteDataList.remove(position);  // Remove the item from the list
-//                notifyItemRemoved(position);   // Notify adapter about removal
                 notifyDataSetChanged();
                 return true;
             } else if (itemId == R.id.menu_share) {// for share action
@@ -121,14 +122,18 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         popupMenu.show();
     }
 
-
     // Share note method
     private void shareNote(NoteData noteData) {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_SUBJECT, noteData.getTitle());
+
         shareIntent.putExtra(Intent.EXTRA_TEXT, noteData.getContent());
         context.startActivity(Intent.createChooser(shareIntent, "Share via"));
+    }
+
+    //for updating adapter with new list
+    void updateNoteList(List<NoteData> newNoteDataList) {
+        this.noteDataList = newNoteDataList;
     }
 
 }

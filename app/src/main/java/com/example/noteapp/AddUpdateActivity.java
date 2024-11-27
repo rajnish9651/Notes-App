@@ -33,7 +33,6 @@ public class AddUpdateActivity extends AppCompatActivity {
         btnDelete = findViewById(R.id.btnDelete);
         dataBaseHelper = new DataBaseHelper(this);
 
-
         //creating and initializing intent
         Intent intent = getIntent();
         //getting values from passed intent
@@ -41,12 +40,10 @@ public class AddUpdateActivity extends AppCompatActivity {
         String title = intent.getStringExtra("title");
         String content = intent.getStringExtra("content");
 
-
         //checking title and content of note if its not null that means
         //it came for the update else create
         if (title != null && content != null) {
-
-            //setting previeous value of note
+            //setting previous value of note
             noteHeading.setText("Update Note.");
             contentEditText.setText(content);
             tittleEditText.setText(title);
@@ -72,7 +69,6 @@ public class AddUpdateActivity extends AppCompatActivity {
                     String titleStr = tittleEditText.getText().toString().trim();
                     if (!contentStr.equals("") && !titleStr.equals("")) {
                         dataBaseHelper.addNote(titleStr, contentStr);
-
                         finish();
 
                     } else {
@@ -83,7 +79,7 @@ public class AddUpdateActivity extends AppCompatActivity {
             });
         }
 
-//for sharing note data
+//     for sharing note data
         btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,7 +99,6 @@ public class AddUpdateActivity extends AppCompatActivity {
                 }
             }
         });
-
 
         //for deleting note
         btnDelete.setOnClickListener(new View.OnClickListener() {
@@ -130,7 +125,6 @@ public class AddUpdateActivity extends AppCompatActivity {
 
             }
         });
-
 
 //        for back btn
         btnBack.setOnClickListener(new View.OnClickListener() {
